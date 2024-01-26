@@ -51,7 +51,7 @@ export default class {
                 status: formatStatus(doc.status)
               }
             }
-          })
+          }).sort((a,b)=> new Date(b.date) - new Date(a.date))
           console.log('length', bills.length)
         return bills
       })
