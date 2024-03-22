@@ -11,7 +11,7 @@ export default class {
     if (buttonNewBill) buttonNewBill.addEventListener('click', this.handleClickNewBill)
     const iconEye = document.querySelectorAll(`div[data-testid="icon-eye"]`)
     if (iconEye) iconEye.forEach(icon => {
-      icon.addEventListener('click', () => this.handleClickIconEye(icon))
+      icon.addEventListener('click', () => this.handleClickIconEye(icon) )
     })
     new Logout({ document, localStorage, onNavigate })
   }
@@ -33,7 +33,7 @@ export default class {
       .bills()
       .list()
       .then(snapshot => {
-        const bills = snapshot
+        const bills = snapshot.sort((a,b)=> new Date(b.date) - new Date(a.date))
           .map(doc => {
             try {
               return {
@@ -51,7 +51,7 @@ export default class {
                 status: formatStatus(doc.status)
               }
             }
-          }).sort((a,b)=> new Date(b.date) - new Date(a.date))
+          })
           console.log('length', bills.length)
         return bills
       })
