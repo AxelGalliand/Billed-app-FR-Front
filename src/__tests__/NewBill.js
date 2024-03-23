@@ -44,6 +44,8 @@ describe("Given I am connected as an employee", () => {
       screen.getByTestId('pct').value = 20
       screen.getByTestId('commentary').value = "test"
       screen.getByTestId('file').value = ""
+      expect(currentNewBill).not.toBeUndefined();
+      expect(currentNewBill).not.toBeNull()
     })
   })
 })
