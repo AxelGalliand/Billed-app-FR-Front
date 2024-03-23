@@ -29,7 +29,7 @@ describe("Given I am connected as an employee", () => {
       window.onNavigate(ROUTES_PATH.Bills)
       await waitFor(() => screen.getByTestId('icon-window'))
       const windowIcon = screen.getByTestId('icon-window')
-
+ 
       expect(windowIcon.classList.contains("active-icon")).toBe(true);
 
     })
@@ -81,6 +81,7 @@ describe("When an error occurs on API", () => {
   })
 
   test("Then i fetch the invoices in the api and it fails with a 500 error", async () => {
+    mockStore.bills.mockImplementationOnce(() => {
       return {
         list: () => {
           return Promise.reject(new Error("Erreur 500"))
