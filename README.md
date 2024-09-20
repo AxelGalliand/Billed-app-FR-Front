@@ -1,3 +1,7 @@
+## Projet Billed
+
+Projet de la formation de développeur front-end, il consiste en un debug et test d'une application de facture avec des tests unitaires, un plan end-to-end, des tests d'intégrations en JavaScript et l'utilisation de Chrome debugger.
+
 
 ## L'architecture du projet :
 Ce projet, dit frontend, est connecté à un service API backend que vous devez aussi lancer en local.
